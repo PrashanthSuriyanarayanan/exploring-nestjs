@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Redirect } from '@nestjs/common';
 import { TrimTrailingWhitespacesPipe } from 'src/common/pipes/trimTrailingWhitespaces.pipe';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -16,6 +16,12 @@ export class UsersController {
     @Get()
     findAll() {
         return this.usersService.findAll();
+    }
+
+    @Get('list')
+    @Redirect('/users', 302)
+    oldFindAll() {
+        return { url: '/users', statusCode: 302}
     }
 
     @Get(':id')
