@@ -1,15 +1,23 @@
-Notes:
+# About
 
-Pipes can be used as a 
-  - Transformer
-  - Validator
+This repository is just a playground for me to explore NestJs framework with my friends.
 
-Request Flow
-Controller > Service > DTO > Entity > Database
+## Request Flow
 
-Controller → validates with DTO → passes to Service → stores in Entity via TypeORM → DB.
+```mermaid
+flowchart TD;
+    A[Client Request] --> B[API Gateway]
+    B --> C[Controller]
+    C --> D[Validates with DTO]
+    D --> E[Service]
+    E --> F[Stores in Entity via TypeORM]
+    F --> G[Database]
+```
 
-Host Mapping to test CORS
-echo 127.0.0.1 localhost nest-poc.com >> C:\Windows\System32\Drivers\etc\hosts
+## Host Mapping
 
-echo ::1 localhost nest-poc.com >> C:\Windows\System32\Drivers\etc\hosts
+```
+  echo 127.0.0.1 localhost nest-poc.com >> C:\Windows\System32\Drivers\etc\hosts
+
+  echo ::1 localhost nest-poc.com >> C:\Windows\System32\Drivers\etc\hosts
+```
