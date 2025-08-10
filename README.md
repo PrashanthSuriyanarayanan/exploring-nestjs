@@ -16,7 +16,7 @@ flowchart TD;
 
 ## Host Mapping
 
-```
+```cmd
   echo 127.0.0.1 localhost nest-poc.com >> C:\Windows\System32\Drivers\etc\hosts
 
   echo ::1 localhost nest-poc.com >> C:\Windows\System32\Drivers\etc\hosts
