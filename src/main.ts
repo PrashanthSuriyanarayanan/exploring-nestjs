@@ -12,7 +12,6 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new LoggingInterceptor());
 
-  // Yet to test the browser behavior
   app.enableCors({
     origin: ['http://nest-poc.com:3000'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
